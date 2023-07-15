@@ -4,13 +4,14 @@ const authRoutes = require('./routes/auth_routes');
 const adminRoutes = require('./routes/admin_routes');
 const penyakitRoutes = require('./routes/penyakit_routes');
 const gejalaRoutes = require('./routes/gejala_routes');
+const bobotRoutes = require('./routes/bobot_routes');
 const server = new Hapi.server({
   port: 5000,
   host: '192.168.100.86',
 });
 const init = async () => {
   await server.start();
-  server.route([...authRoutes, ...adminRoutes, ...penyakitRoutes, ...gejalaRoutes]);
+  server.route([...authRoutes, ...adminRoutes, ...penyakitRoutes, ...gejalaRoutes, ...bobotRoutes]);
   console.log(`Server berjalan pada ${server.info.uri}`);
 };
 
